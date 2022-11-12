@@ -1,0 +1,17 @@
+{
+    "name": "micoh/registration-login-strapi",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Micoh Yabut",
+            "email": "yabut.micohjomarie@auf.edu.ph"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.5"
+    }
+}
