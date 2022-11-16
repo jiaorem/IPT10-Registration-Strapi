@@ -4,21 +4,19 @@ include "vendor/autoload.php";
 
 use App\Auth;
 
-try{ 
-    
+try { 
+    $client = new Auth();
+
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
+    
+    $result = $client->register($username, $email, $password);
 
-    //var_dump($username, $email, $password);
-    $client = new Auth();
-    $result = $client->registerUser($username, $email, $password);
-    //var_dump($result);
-    var_dump($result->getStatusCode());
-    var_dump($result->getReasonPhrase());
-    var_dump($result->getProtocolVersion());
-    var_dump($result->getBody()->getContents());
+    echo "<script>window.location.href='register-success.php';</script>";
+    exit;
 }
+
 catch (Exception $e) {
     error_log($e->getMessage());
 }
